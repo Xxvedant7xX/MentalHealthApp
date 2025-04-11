@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 
@@ -53,9 +53,34 @@ class _HomePageState extends State<HomePage> {
                ) 
               ],
              ),
+             SizedBox(
+              height: 20,
+             ),
 
            // Search Bar
-
+           Container(
+            decoration: BoxDecoration(
+              color: Colors.blue[600],
+              borderRadius:BorderRadius.circular(12),
+              ),
+              padding: EdgeInsets.all(12),
+            child:Row(children: [
+              Icon(Icons.search,
+              color: Colors.white,
+              ),
+              SizedBox(
+                width: 5,
+                ),
+              Text(
+                'Search',
+              style: TextStyle(
+                color: Colors.white,
+                 fontSize: 15
+                 ),
+              ),
+            ],
+            ),
+             ),
            ], 
           ),
         ),
