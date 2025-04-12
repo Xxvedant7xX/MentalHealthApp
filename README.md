@@ -4,7 +4,22 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Mental Health App — Simple UI Design
+This project showcases a clean and beginner-friendly user interface for a mental health mobile app. The design includes:
+
+Personalized greeting and date display
+
+Search functionality
+
+Mood tracking options using emoji-based buttons
+
+Exercise categories for developing Speaking, Reading, and Writing skills
+
+The focus is on simplicity, a calming color palette, and intuitive navigation to create a supportive experience for users.
+
+Perfect as a starting point for building fully functional mental health applications.
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
