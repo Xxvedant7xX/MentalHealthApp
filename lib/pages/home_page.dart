@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:mentalhealthapp/util/emoticon_face.dart';
+import 'package:mentalhealthapp/util/exercise_title.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,12 +16,28 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue[800],
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label:''
+          ),
+           BottomNavigationBarItem(
+          icon: Icon(Icons.message),
+          label:''
+          ),
+           BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label:''
+          ),
+      ]),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            children: [
-          Row(
+        child: Column(
+          children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Column(
+              children: [
+                 Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               //Greeting Individual
@@ -57,9 +74,9 @@ class _HomePageState extends State<HomePage> {
              SizedBox(
               height: 20,
              ),
-
-           // Search Bar
-           Container(
+                    
+                     // Search Bar
+                     Container(
             decoration: BoxDecoration(
               color: Colors.blue[600],
               borderRadius:BorderRadius.circular(12),
@@ -82,11 +99,11 @@ class _HomePageState extends State<HomePage> {
             ],
             ),
              ),
-
+                    
              SizedBox(
               height: 25,
              ),
-
+                    
              //emotion status
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                     )
                 ],
               ),
-
+                    
               SizedBox(
               height: 25,
              ),
@@ -167,8 +184,76 @@ class _HomePageState extends State<HomePage> {
               ),
               ],
              ),
-           ], 
+              ],
+            ),
           ),
+
+          SizedBox(
+            height: 25,
+            ),
+           
+           Expanded(
+             child: Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(25),
+                ),
+              ),
+              padding:EdgeInsets.all(25),
+              child: Center(
+                child: Column(
+                  children: [
+                    //exercise heading
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Exercises',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        ),
+                      ),
+                    Icon(Icons.more_horiz),
+                  ],
+                ),
+
+                SizedBox(
+                  height: 20,
+                  ),
+
+                   // list view of exercises
+                   Expanded(
+                     child: ListView(
+                      children: [
+                        ExerciseTile(
+                          icon: Icons.favorite,
+                          excerciseName: 'Speaking Skills',
+                          numberOfExercises: 16,
+                          color: Colors.orange,
+                        ),
+                       ExerciseTile(
+                          icon: Icons.person,
+                          excerciseName: 'Reading Skills',
+                          numberOfExercises: 8,
+                          color: Colors.green,
+                        ),
+                        ExerciseTile(
+                          icon: Icons.star,
+                          excerciseName: 'Writing Slills',
+                          numberOfExercises: 20,
+                          color: Colors.pink,
+                        ),
+                      ],
+                     ),
+                   ),
+                ],
+                ),
+              )
+             ),
+           ),
+         ], 
         ),
       ),
     );
